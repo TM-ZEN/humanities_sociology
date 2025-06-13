@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人文社会入門 講義一覧</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* 濃い紺色 */
+            --secondary-color: #336699; /* やや明るい青 */
+            --accent-color: #e60033; /* 赤色のアクセント */
+            --background-color: #f4f8fa; /* 薄い青みがかった背景 */
+            --text-color: #333;
+            --white-color: #ffffff;
+            --quiz-accent-color: #4a2e6b; /* 紫系 */
+            --quiz-accent-hover-color: #7b5aa6;
+        }
+
+        body {
+            font-family: 'Yu Gothic UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            text-align: center;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -3px;
+            width: 80px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lecture-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .lecture-card {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white-color);
+            border: 1px solid #ddd;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .lecture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-left-color: var(--primary-color);
+        }
+
+        .lecture-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .lecture-number {
+            font-size: 1em;
+            font-weight: bold;
+            color: var(--primary-color);
+            background-color: #e7f3ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .lecture-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .lecture-summary {
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #555;
+            flex-grow: 1; /* これでカードの高さを揃える */
+        }
+
+        .quiz-card {
+            border-left-color: var(--quiz-accent-color);
+        }
+
+        .quiz-card:hover {
+            border-left-color: var(--quiz-accent-hover-color);
+        }
+
+        .quiz-card .lecture-number {
+            background-color: #f9f7fc;
+            color: var(--quiz-accent-color);
+        }
+        
+        .quiz-card .lecture-title {
+            color: var(--quiz-accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 { font-size: 1.8em; }
+            .lecture-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>人文社会入門 講義一覧</h1>
+        <p class="intro-text">
+            各講義のページへ移動できます。学びたい講座を選択してください。<br>すべての講座を終えたら、総復習テストに挑戦して理解度を確かめましょう。
+        </p>
+
+        <div class="lecture-list">
+            
+            <a href="page1.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第1回</span>
+                    <h2 class="lecture-title">人文学・社会科学の重要性</h2>
+                </div>
+                <p class="lecture-summary">複雑な現代社会を生き抜くために、なぜ人文社会科学を学ぶのか？その意義と基本的な考え方を探ります。</p>
+            </a>
+            
+            <a href="page2.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第2回</span>
+                    <h2 class="lecture-title">社会学的な捉え方——理論編</h2>
+                </div>
+                <p class="lecture-summary">自殺や格差といった社会問題を、デュルケム、マルクス、ジンメルの視点から読み解き、社会学の「ものの見方」を体感します。</p>
+            </a>
+
+            <a href="page3.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第3回</span>
+                    <h2 class="lecture-title">社会学的な考え方——方法編</h2>
+                </div>
+                <p class="lecture-summary">目に見えない「社会」を科学的にどう捉えるか。比較、統計、批判、観察といった社会学の研究方法を、4人の巨人の実践から学びます。</p>
+            </a>
+
+            <a href="page4.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第4回</span>
+                    <h2 class="lecture-title">人類学の考え方</h2>
+                </div>
+                <p class="lecture-summary">食文化、衛生観念、贈答習慣など、日常の「当たり前」から文化の多様性を探る文化人類学。そのユニークな視点を紹介します。</p>
+            </a>
+
+            <a href="page5.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第5回</span>
+                    <h2 class="lecture-title">人類学の考え方(2)</h2>
+                </div>
+                <p class="lecture-summary">カルチャーショックや通過儀礼といった「体験」を通じて、自分の常識を相対化し、人間への理解を深める方法を探ります。</p>
+            </a>
+
+            <a href="page6.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第6回</span>
+                    <h2 class="lecture-title">文化資源とは何か</h2>
+                </div>
+                <p class="lecture-summary">マンガやゲームも未来への貴重な遺産。文化を「資源」として捉え、その保存・活用・再創造のサイクルを学びます。</p>
+            </a>
+
+            <a href="page7.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第7回</span>
+                    <h2 class="lecture-title">経営学とは何か</h2>
+                </div>
+                <p class="lecture-summary">文理の壁を超え、抽象化やメタ思考といった思考法を鍛える。経営学の視点から、自らの学びをデザインする方法を考えます。</p>
+            </a>
+
+            <a href="page8.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第8回</span>
+                    <h2 class="lecture-title">心理学の世界</h2>
+                </div>
+                <p class="lecture-summary">心は目に見えない。だからこそ「行動」を手がかりに科学する。発達、学習、社会心理学など、多様な心の探求に触れます。</p>
+            </a>
+
+            <a href="page9.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第9回</span>
+                    <h2 class="lecture-title">歴史を紐解く</h2>
+                </div>
+                <p class="lecture-summary">歴史は単なる暗記ではない。勝利者史観や専門化の壁を乗り越え、多角的に過去を読み解き、未来の指針を得る方法を学びます。</p>
+            </a>
+
+            <a href="page10.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第10回</span>
+                    <h2 class="lecture-title">科学哲学の考え方</h2>
+                </div>
+                <p class="lecture-summary">科学は本当に「正しい」のか？科学と疑似科学を分ける基準とは？科学と賢く付き合うための哲学的思考を身につけます。</p>
+            </a>
+
+            <a href="page11.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第11回</span>
+                    <h2 class="lecture-title">法学の世界</h2>
+                </div>
+                <p class="lecture-summary">法律は自分を守るための「武器」。SNSでの誹謗中傷やフェイクニュースを例に、法律を実践的に使いこなす方法を学びます。</p>
+            </a>
+
+            <a href="page12.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第12回</span>
+                    <h2 class="lecture-title">文学的な捉え方</h2>
+                </div>
+                <p class="lecture-summary">文学は単なる娯楽ではない。夏目漱石の苦悩や現代作品を例に、文学が社会を映し、世界を再編する力を探ります。</p>
+            </a>
+
+            <a href="page13.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第13回</span>
+                    <h2 class="lecture-title">文学的な捉え方(2)</h2>
+                </div>
+                <p class="lecture-summary">グローバル化や情報社会の分断に、文学はどう抗うか。カウンターカルチャーや言語多様性の視点から文学の政治性を考えます。</p>
+            </a>
+
+            <a href="page14.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第14回</span>
+                    <h2 class="lecture-title">政治学は世界をどう見るか</h2>
+                </div>
+                <p class="lecture-summary">民主主義や国際法の仕組みとは？政治の基本を歴史と倫理の視点から捉え直し、現代社会を読み解く「ものさし」を養います。</p>
+            </a>
+
+            <a href="page15.html" class="lecture-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">第15回</span>
+                    <h2 class="lecture-title">物語論はどう役に立つのか</h2>
+                </div>
+                <p class="lecture-summary">物語に潜む普遍的な「文法」を解き明かし、情報リテラシーや自己理解のツールとして応用する方法を探ります。</p>
+            </a>
+
+            <a href="page16.html" class="lecture-card quiz-card">
+                <div class="lecture-header">
+                    <span class="lecture-number">最終章</span>
+                    <h2 class="lecture-title">総復習テスト</h2>
+                </div>
+                <p class="lecture-summary">第1回から第15回までの全範囲を網羅した確認テストで、学びの成果をチェックしましょう。全問正解を目指して挑戦！</p>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>
